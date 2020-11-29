@@ -1,4 +1,3 @@
-import App from 'next/app'
 import React, { useEffect, useState } from 'react'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { ThemeProvider } from '@material-ui/core'
