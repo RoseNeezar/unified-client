@@ -5,6 +5,8 @@ import { themeDark, themeLight } from '../lib/theme'
 import { AppProps } from 'next/dist/next-server/lib/router/router'
 import { useApollo } from '../lib/apollo'
 import { ApolloProvider } from '@apollo/client'
+import { AuthProvider } from '../lib/useAuth'
+import Header from '../components/Header'
 
 const Apps = ({ Component, pageProps }: AppProps) => {
   const apolloClient = useApollo(pageProps.initialApolloState)
@@ -24,7 +26,10 @@ const Apps = ({ Component, pageProps }: AppProps) => {
     <ApolloProvider client={apolloClient}>
       <ThemeProvider theme={darkState ? themeDark : themeLight}>
         <CssBaseline />
-        <Component {...pageProps} />
+        <AuthProvider>
+          <Header darkState={darkState} handleThemeChange={handleThemeChange} />
+          <Component {...pageProps} />
+        </AuthProvider>
       </ThemeProvider>
     </ApolloProvider>
   )
