@@ -22,7 +22,7 @@ const SignUp = () => {
       <Box my={4}>
         <form onSubmit={onSubmit}>
           {error && <p>{error}</p>}
-          <Typography variant="h4">Sign Up</Typography>
+          <Typography variant="h4">Sign Up here</Typography>
           <Box pb={2.5} />
           <TextField
             value={email}
