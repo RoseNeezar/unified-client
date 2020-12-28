@@ -21,7 +21,7 @@ const Header: FC<IHeader> = ({ darkState, handleThemeChange }) => {
   const classes = useStyles()
   const { user } = useAuth()
   const links = [
-    !user && { label: 'Sign Up', href: '/auth/signup' },
+    !user && { label: 'Sign Up', href: '/auth/signUp' },
     !user && { label: 'Sign In', href: '/auth/signin' },
     user && { label: 'Create', href: '/streams/new' },
     user && { label: 'Sign Out', href: '/auth/signout' },
