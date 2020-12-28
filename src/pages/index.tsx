@@ -7,11 +7,15 @@ const index = () => {
     <Container maxWidth="sm">
       <Box my={4}>
         <Typography variant="h4" component="h1" gutterBottom>
-          Hellow world
+          The HTML embed element embeds external content at the specified point
+          in the document.
+          <br />
+          This app is a place to store your embed content streams in a more
+          centralize way
         </Typography>
-        <Link href="/about">
+        <Link href="/streams">
           <Button variant="contained" color="primary">
-            go to about
+            go to streams
           </Button>
         </Link>
       </Box>
