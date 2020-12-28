@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from 'react'
+import React, { ChangeEvent, FormEvent, useState } from 'react'
 import { useRouter } from 'next/router'
 import {
   Container,
@@ -8,6 +8,7 @@ import {
   Button,
 } from '@material-ui/core'
 import { useCreateStreamMutation } from '../../lib/graphql/createStream.graphql'
+import { getUrl } from '../../utils/getUrl'
 
 const New = () => {
   const [title, setTitle] = useState('')
@@ -32,6 +33,7 @@ const New = () => {
       console.log(err)
     }
   }
+
   return (
     <Container maxWidth="sm">
       <Box my={4}>
@@ -56,7 +58,7 @@ const New = () => {
           <TextField
             label="URL"
             value={url}
-            onChange={(e) => setUrl(e.target.value)}
+            onChange={(e) => setUrl(getUrl(e.target.value))}
             required
           />
           <Box pb={2.5} />

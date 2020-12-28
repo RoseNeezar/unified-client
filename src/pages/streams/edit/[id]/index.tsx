@@ -12,6 +12,7 @@ import {
   TextField,
   Button,
 } from '@material-ui/core'
+import { getUrl } from '../../../../utils/getUrl'
 
 interface Context extends NextPageContext {
   id: string
@@ -98,7 +99,9 @@ const EditStream: NextPage<IEditStream> = ({ id }) => {
           <TextField
             label="URL"
             value={url}
-            onChange={(e) => setState({ ...state, url: e.target.value })}
+            onChange={(e) =>
+              setState({ ...state, url: getUrl(e.target.value) })
+            }
             required
           />
           <Box pb={2.5} />
